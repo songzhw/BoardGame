@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ViewProps, Text, StyleSheet } from "react-native";
+import { View, ViewProps, Text, StyleSheet, SafeAreaView } from "react-native";
 import { PlayerView } from "../components/PlayerView";
 import { MyDeck } from "../components/MyDeck";
 
@@ -8,11 +8,11 @@ interface IProps extends ViewProps {
 
 export const GameScreen = (props: IProps) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
 
       <View style={styles.row}>
-        <PlayerView/>
-        <PlayerView/>
+        <PlayerView style={{display: 'none'}}/>
+        <PlayerView style={{display: 'none'}}/>
         <PlayerView/>
       </View>
 
@@ -28,7 +28,7 @@ export const GameScreen = (props: IProps) => {
 
       <MyDeck/>
 
-    </View>
+    </SafeAreaView>
   );
 };
 
