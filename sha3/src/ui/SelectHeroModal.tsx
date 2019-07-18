@@ -4,6 +4,7 @@ import Modal from "react-native-modal";
 import { Button } from "beeshell";
 
 interface IProps extends ViewProps {
+  onSelect: (info: string) => void;
 }
 
 export const SelectHeroModal = (props: IProps) => {
@@ -11,11 +12,12 @@ export const SelectHeroModal = (props: IProps) => {
 
   function onStart() {
     setModalVisible(false);
+    props.onSelect("白板2血");
   }
 
   return (
     <Modal isVisible={isModalVisible}>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Button type="primary" size="md" onPress={onStart}> Start </Button>
       </View>
     </Modal>

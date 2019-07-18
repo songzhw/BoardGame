@@ -10,6 +10,10 @@ interface IProps extends ViewProps {
 
 export const GameScreen = (props: IProps) => {
 
+  function onSelect(info: string) {
+    console.log(`szw info = `, info);
+  }
+
   return (
     <SafeAreaView style={styles.container}>
 
@@ -21,7 +25,7 @@ export const GameScreen = (props: IProps) => {
 
       <MyDeck/>
 
-      <SelectHeroModal/>
+      <SelectHeroModal onSelect={onSelect}/>
 
     </SafeAreaView>
   );
