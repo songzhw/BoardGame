@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, ViewProps, Text, StyleSheet } from "react-native";
-import { Button } from "beeshell";
+import { Button, Radio } from "beeshell";
 import { NavigationScreenProps } from "react-navigation";
+import { GAME_MODEL_4, GAME_MODEL_6, GAME_MODEL_8 } from "../data/Const";
 
 interface IProps extends ViewProps, NavigationScreenProps {
 }
@@ -10,13 +11,21 @@ interface IProps extends ViewProps, NavigationScreenProps {
 // BeeShell/TopviewGetInstance : 选将
 
 export const HomeScreen = (props: IProps) => {
+  const [gameMode, setGameMode] = useState(GAME_MODEL_4);
 
   function onStart() {
+    console.log(`szw onstart()`);
     props.navigation.navigate("GameScreen");
   }
 
   return (
     <View>
+      <Radio value={GAME_MODEL_4} onChange={(mode: number) => setGameMode(mode)}>
+        <Radio.Item label={"四人局(1主公, 1忠臣, 1反贼, 1内奸"} value={GAME_MODEL_4}/>
+        <Radio.Item label={"六人局(1主公, 1忠臣, 2反贼, 2内奸"} value={GAME_MODEL_6}/>
+        <Radio.Item label={"八人局(1主公, 2忠臣, 3反贼, 2内奸"} value={GAME_MODEL_8}/>
+      </Radio>
+
       <Button type="primary" size="md" onPress={onStart}> Start </Button>
     </View>
   );
