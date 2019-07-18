@@ -1,32 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, ViewProps, Text, StyleSheet, SafeAreaView } from "react-native";
 import { PlayerView } from "../components/PlayerView";
 import { MyDeck } from "../components/MyDeck";
+import Modal from "react-native-modal";
+import { SelectHeroModal } from "./SelectHeroModal";
 
 interface IProps extends ViewProps {
 }
 
 export const GameScreen = (props: IProps) => {
+
   return (
     <SafeAreaView style={styles.container}>
 
       <View style={styles.row}>
-        <PlayerView style={{display: 'none'}}/>
-        <PlayerView style={{display: 'none'}}/>
         <PlayerView/>
-      </View>
-
-      <View style={styles.row}>
-        <PlayerView/>
-        <PlayerView/>
-      </View>
-
-      <View style={styles.row}>
         <PlayerView/>
         <PlayerView/>
       </View>
 
       <MyDeck/>
+
+      <SelectHeroModal/>
 
     </SafeAreaView>
   );
