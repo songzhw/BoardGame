@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, ViewProps, Text, StyleSheet } from "react-native";
-import { Button, Radio } from "beeshell";
+import { Button, Icon, Radio } from "beeshell";
 import { NavigationScreenProps } from "react-navigation";
 import { GAME_MODEL_4, GAME_MODEL_6, GAME_MODEL_8 } from "../data/Const";
 
@@ -20,7 +20,8 @@ export const HomeScreen = (props: IProps) => {
 
   return (
     <View>
-      <Radio value={GAME_MODEL_4} onChange={(mode: number) => setGameMode(mode)}>
+      <Radio value={gameMode} onChange={(mode: number) => setGameMode(mode)}
+        >
         <Radio.Item label={"四人局(1主公, 1忠臣, 1反贼, 1内奸"} value={GAME_MODEL_4}/>
         <Radio.Item label={"六人局(1主公, 1忠臣, 2反贼, 2内奸"} value={GAME_MODEL_6}/>
         <Radio.Item label={"八人局(1主公, 2忠臣, 3反贼, 2内奸"} value={GAME_MODEL_8}/>
