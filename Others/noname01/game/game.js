@@ -333,6 +333,7 @@ window.play = {};
         lib.init.js("card", lib.config.all.cards);
         lib.init.js("character", lib.config.all.characters);
         lib.init.js("play", lib.config.plays);
+
         ui.css = {};
         ui.css.layout = lib.init.css("layout/" + lib.config.layout, "layout");
         if (!lib.config.touchscreen) {
@@ -344,6 +345,7 @@ window.play = {};
         if (lib.config.blur_ui) ui.css.blur_ui = lib.init.css("layout/default", "blur");
         ui.css.theme = lib.init.css("theme/" + lib.config.theme, "style");
       },
+
       css: function(path, file, before) {
         var style = document.createElement("link");
         style.rel = "stylesheet";
@@ -10178,6 +10180,9 @@ window.play = {};
       return this.childNodes[row].childNodes[col];
     }
   };
+
+
+
   Array.prototype.find = function(item) {
     return this.indexOf(item);
   };
@@ -10222,6 +10227,9 @@ window.play = {};
     }
     return list;
   };
+
+
+
   window.cheat = {
     i: function() {
       window.game = game;
@@ -10451,7 +10459,9 @@ window.play = {};
     console.log(str);
     return aa + bb + cc + dd;
   };
+
   lib.init.init();
+
   window.onkeydown = function(e) {
     if (e.keyCode == 32) {
       var node = ui.window.querySelector("#paused");
@@ -10673,6 +10683,8 @@ window.play = {};
     game.start();
     game.loop();
   };
+
+
   document.onmousemove = ui.click.windowmousemove;
   document.onmousedown = ui.click.windowmousedown;
   document.onmouseup = ui.click.windowmouseup;
