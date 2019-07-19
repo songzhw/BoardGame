@@ -1,5 +1,5 @@
 /** @return : first < second, 返回-1;  first > second, 返回1; 相等则返回0 */
-import { CardDeck, CardRankList, ICard, ICardRank } from "../data/CardDeck";
+import { OriginalCardDeck, CardRankList, ICard, ICardRank } from "../data/CardDeck";
 import { shuffle } from "./ArrayUtils";
 
 export function compareCardRank(one: ICardRank, two: ICardRank) {
@@ -9,5 +9,9 @@ export function compareCardRank(one: ICardRank, two: ICardRank) {
 }
 
 export function shuffleCards() {
-  return shuffle<ICard>(CardDeck);
+  return shuffle<ICard>(OriginalCardDeck);
+}
+
+export function drawCards(deck: Array<ICard>, amount: number){
+  return deck.splice(0, amount);
 }

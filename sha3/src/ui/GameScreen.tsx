@@ -3,14 +3,19 @@ import { View, ViewProps, Text, StyleSheet, SafeAreaView } from "react-native";
 import { PlayerView } from "../components/PlayerView";
 import { MyDeck } from "../components/MyDeck";
 import { SelectHeroModal } from "./SelectHeroModal";
+import { shuffleCards } from "../utils/CardUtils";
+import { OriginalCardDeck } from "../data/CardDeck";
 
 interface IProps extends ViewProps {
 }
 
 export const GameScreen = (props: IProps) => {
+  const [deck, setDeck] = useState(OriginalCardDeck);
 
   function onSelectHero(info: string) {
-    console.log(`szw info = `, info);
+    const cardDeck = shuffleCards();
+    setDeck(cardDeck);
+    console.log(`szw info = ${info} ; `, cardDeck);
   }
 
   return (

@@ -12,7 +12,7 @@ export interface ICard {
 }
 
 
-export const CardDeck: Array<ICard> = [
+export const OriginalCardDeck: Array<ICard> = [
   { suit: "spade", rank: "1", label: "杀" },
   { suit: "spade", rank: "2", label: "杀" },
   { suit: "spade", rank: "3", label: "杀" },
