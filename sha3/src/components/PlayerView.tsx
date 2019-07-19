@@ -4,17 +4,16 @@ import { PLAYER_HEIGHT, PLAYER_WIDTH } from "../core/Const";
 import { ICard } from "../data/CardDeck";
 
 interface IProps extends ViewProps {
-  avatar: string;
+  avatar: any;
   hand: ICard[]
 }
 
 export const PlayerView = (props: IProps) => {
   const passedInStyles = props.style;
-  const avatar = require(props.ava);
 
   return (
     <View style={[styles.container, passedInStyles]}>
-      <Image style={styles.container} source={avatar}/>
+      <Image style={styles.container} source={props.avatar}/>
       <View style={styles.emptyPlaceHolder}/>
       <View style={styles.bottomContainer}>
         <View style={styles.bottomRow}>

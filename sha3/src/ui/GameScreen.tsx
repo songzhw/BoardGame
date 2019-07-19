@@ -22,9 +22,9 @@ export const GameScreen = (props: IProps) => {
     <SafeAreaView style={styles.container}>
 
       <View style={styles.row}>
-        <PlayerView hand={[]} avatar="../../res/images/heros/孙权.jpg"/>
-        <PlayerView hand={[]} avatar="../../res/images/heros/赵云.jpg"/>
-        <PlayerView hand={[]} avatar="../../res/images/heros/张辽.jpg"/>
+        <PlayerView hand={[]} avatar={require("../../res/images/heros/孙权.jpg")}/>
+        <PlayerView hand={[]} avatar={require("../../res/images/heros/赵云.jpg")}/>
+        <PlayerView hand={[]} avatar={require("../../res/images/heros/张辽.jpg")}/>
       </View>
 
       <MyDeck/>
