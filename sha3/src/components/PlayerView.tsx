@@ -1,14 +1,20 @@
 import React from "react";
-import { StyleSheet, View, Text, ViewProps } from "react-native";
+import { StyleSheet, View, Text, ViewProps, Image } from "react-native";
 import { PLAYER_HEIGHT, PLAYER_WIDTH } from "../core/Const";
+import { ICard } from "../data/CardDeck";
 
 interface IProps extends ViewProps {
+  avatar: string;
+  hand: ICard[]
 }
 
 export const PlayerView = (props: IProps) => {
   const passedInStyles = props.style;
+  const avatar = require(`../../res/images/heros/${props.avatar}.jpg`);
+
   return (
     <View style={[styles.container, passedInStyles]}>
+      <Image style={styles.container} source={avatar}/>
       <View style={styles.emptyPlaceHolder}/>
       <View style={styles.bottomContainer}>
         <View style={styles.bottomRow}>
