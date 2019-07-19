@@ -10,7 +10,8 @@ interface IProps extends ViewProps {
 
 export const PlayerView = (props: IProps) => {
   const passedInStyles = props.style;
-  const avatar = require(`../../res/images/heros/${props.avatar}.jpg`);
+  const avatarUrl = `../../res/images/heros/${props.avatar}.jpg`;
+  const avatar = require(avatarUrl);
 
   return (
     <View style={[styles.container, passedInStyles]}>
