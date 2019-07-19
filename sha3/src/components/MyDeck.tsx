@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import { PLAYER_HEIGHT } from "../data/Const";
+import { PLAYER_HEIGHT } from "../core/Const";
 import { PlayerView } from "./PlayerView";
 
 interface IProps {

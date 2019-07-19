@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, ViewProps, Text, StyleSheet, SafeAreaView } from "react-native";
 import { Button, Icon, Radio } from "beeshell";
 import { NavigationScreenProps } from "react-navigation";
-import { GAME_MODEL_4, GAME_MODEL_6, GAME_MODEL_8 } from "../data/Const";
+import { GAME_MODEL_4, GAME_MODEL_6, GAME_MODEL_8 } from "../core/Const";
 import Orientation from "react-native-orientation";
 
 interface IProps extends ViewProps, NavigationScreenProps {

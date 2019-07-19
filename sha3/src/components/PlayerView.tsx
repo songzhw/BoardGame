@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, ViewProps } from "react-native";
-import { PLAYER_HEIGHT, PLAYER_WIDTH } from "../data/Const";
+import { PLAYER_HEIGHT, PLAYER_WIDTH } from "../core/Const";
 
 interface IProps extends ViewProps {
 }

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { View, ViewProps, Text, StyleSheet, SafeAreaView } from "react-native";
 import { PlayerView } from "../components/PlayerView";
 import { MyDeck } from "../components/MyDeck";
-import Modal from "react-native-modal";
 import { SelectHeroModal } from "./SelectHeroModal";
 
 interface IProps extends ViewProps {
@@ -10,7 +9,7 @@ interface IProps extends ViewProps {
 
 export const GameScreen = (props: IProps) => {
 
-  function onSelect(info: string) {
+  function onSelectHero(info: string) {
     console.log(`szw info = `, info);
   }
 
@@ -25,7 +24,7 @@ export const GameScreen = (props: IProps) => {
 
       <MyDeck/>
 
-      <SelectHeroModal onSelect={onSelect}/>
+      <SelectHeroModal onSelect={onSelectHero}/>
 
     </SafeAreaView>
   );
