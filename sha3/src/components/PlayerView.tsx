@@ -13,7 +13,7 @@ export const PlayerView = (props: IProps) => {
 
   return (
     <View style={[styles.container, passedInStyles]}>
-      <Image style={styles.container} source={props.avatar}/>
+      <Image style={styles.avatar} source={props.avatar}/>
       <View style={styles.emptyPlaceHolder}/>
       <View style={styles.bottomContainer}>
         <View style={styles.bottomRow}>
@@ -41,11 +41,20 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "black"
   },
+  avatar: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    width: PLAYER_WIDTH,
+    height: PLAYER_HEIGHT
+  },
   emptyPlaceHolder: {
     flex: 1
   },
   bottomContainer: {
-    flex: 1
+    flex: 1,
+    backgroundColor: "white"
   },
   bottomRow: {
     flex: 1,
