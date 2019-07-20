@@ -74,7 +74,8 @@ const styles = StyleSheet.create({
     fontSize: 15
   },
   bottomAdjugementCell: {
-    flex:1
+    width: PLAYER_WIDTH / 4,
+    height: PLAYER_HEIGHT / 4
   }
 
 });
