@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   },
   bottomAdjugementCell: {
     width: PLAYER_WIDTH / 4,
-    height: PLAYER_HEIGHT / 4
+    height: PLAYER_WIDTH / 4
   }
 
 });
