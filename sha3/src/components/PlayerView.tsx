@@ -14,6 +14,7 @@ export const PlayerView = (props: IProps) => {
   return (
     <View style={[styles.container, passedInStyles]}>
       <Image style={styles.avatar} source={props.avatar}/>
+
       <View style={styles.emptyPlaceHolder}/>
       <View style={styles.bottomContainer}>
         <View style={styles.bottomRow}>
@@ -27,6 +28,11 @@ export const PlayerView = (props: IProps) => {
         <View style={styles.bottomRow}>
           <Text style={styles.bottomCell}>静心香</Text>
           <Text style={styles.bottomCell}>木牛流马</Text>
+        </View>
+        <View style={styles.bottomRow}>
+          <Image source={require("../../res/images/adjugement/乐不思蜀.png")} style={styles.bottomAdjugementCell}/>
+          <Image source={require("../../res/images/adjugement/兵粮寸断.png")} style={styles.bottomAdjugementCell}/>
+          <Image source={require("../../res/images/adjugement/闪电.png")} style={styles.bottomAdjugementCell}/>
         </View>
       </View>
     </View>
@@ -54,7 +60,7 @@ const styles = StyleSheet.create({
   },
   bottomContainer: {
     flex: 1,
-    backgroundColor: "white"
+    backgroundColor: "#ccc"
   },
   bottomRow: {
     flex: 1,
@@ -66,6 +72,9 @@ const styles = StyleSheet.create({
     textAlignVertical: "center",
     color: "black",
     fontSize: 15
+  },
+  bottomAdjugementCell: {
+    flex:1
   }
 
 });
