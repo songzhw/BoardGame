@@ -10,7 +10,7 @@ interface IProps extends ViewProps {
 }
 
 export const MyDeck = (props: IProps) => {
-
+  console.log(`szw mydeck = `, props.hand);
   return (
     <View style={styles.parent}>
       <PlayerView hand={props.hand} avatar={props.avatar}/>
