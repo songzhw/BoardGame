@@ -16,7 +16,9 @@ export const PlayerView = (props: IProps) => {
 
       <Image style={styles.avatar} source={props.avatar}/>
 
-      <Text style={styles.handAmount}> {props.hand.length} </Text>
+      <View style={[styles.circle, styles.handleAmountParent]}>
+        <Text style={styles.handAmount}> {props.hand.length} </Text>
+      </View>
 
       <View style={styles.emptyPlaceHolder}/>
       <View style={styles.bottomContainer}>
@@ -58,18 +60,23 @@ const styles = StyleSheet.create({
     width: PLAYER_WIDTH,
     height: PLAYER_HEIGHT
   },
-
-  handAmount: {
-    position: "absolute",
-    right: 0,
-    top: 0,
-    fontSize: 22,
-    textAlign: "center",
+  circle: {
     width: 24,
     height: 24,
     borderRadius: 12,
     borderStyle: "solid",
+    borderColor: "green"
+  },
+  handleAmountParent: {
+    position: "absolute",
+    right: 0,
+    top: 0,
     backgroundColor: "#f76260"
+  },
+  handAmount: {
+    fontSize: 22,
+    textAlign: "center"
+
   },
   emptyPlaceHolder: {
     flex: 1
