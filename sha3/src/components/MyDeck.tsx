@@ -3,6 +3,7 @@ import { Image, StyleSheet, View, ViewProps } from "react-native";
 import { CARD_WIDTH, PLAYER_HEIGHT } from "../core/Const";
 import { PlayerView } from "./PlayerView";
 import { ICard } from "../data/CardDeck";
+import { imageSources } from "../core/Images";
 
 interface IProps extends ViewProps {
   avatar: any;
@@ -17,7 +18,7 @@ export const MyDeck = (props: IProps) => {
     handViews.push(
       <Image
         style={[styles.oneCard, { position: "absolute", left: positionOffset }]}
-        source={require("../../res/images/cards/basic/杀.png")}
+        source={imageSources[card.label]}
         key={index + card.label}/>
     );
     positionOffset += 40;
