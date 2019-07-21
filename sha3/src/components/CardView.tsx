@@ -5,23 +5,23 @@ import { ICard } from "../data/CardDeck";
 import { imageSources } from "../core/Images";
 
 interface IProps extends ViewProps {
-  image: ImageSourcePropType;
   card: ICard
 }
 
 export const CardView = (props: IProps) => {
   const suit = imageSources[props.card.suit];
+  const image = imageSources[props.card.label];
   return (
     <View>
       <Image style={styles.suit} source={suit}/>
-      <Image style={{ flex: 1 }} source={props.image}/>
+      <Image style={styles.card} source={image}/>
     </View>
   );
 };
 
 
 const styles = StyleSheet.create({
-  container: {
+  card: {
     width: CARD_WIDTH,
     height: CARD_HEIGHT
   },

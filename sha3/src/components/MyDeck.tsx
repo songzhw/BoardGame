@@ -4,6 +4,7 @@ import { CARD_HEIGHT, CARD_WIDTH, HAND_OFFSET_4, PLAYER_HEIGHT } from "../core/C
 import { PlayerView } from "./PlayerView";
 import { ICard } from "../data/CardDeck";
 import { imageSources } from "../core/Images";
+import { CardView } from "./CardView";
 
 interface IProps extends ViewProps {
   avatar: any;
@@ -16,9 +17,9 @@ export const MyDeck = (props: IProps) => {
   const handViews: Element[] = [];
   props.hand.forEach((card, index) => {
     handViews.push(
-      <Image
+      <CardView
         style={[styles.oneCard, { position: "absolute", left: positionOffset }]}
-        source={imageSources[card.label]}
+        card={card}
         key={index + card.label}/>
     );
     positionOffset += HAND_OFFSET_4;
