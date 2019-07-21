@@ -14,9 +14,9 @@ interface IProps extends ViewProps, NavigationScreenProps {
 export const HomeScreen = (props: IProps) => {
   const [gameMode, setGameMode] = useState(GAME_MODEL_4);
 
-  // useEffect(() => {
-  //   Orientation.lockToLandscape();
-  // }, []);
+  useEffect(() => {
+    Orientation.lockToLandscape();
+  }, []);
 
   function onStart() {
     console.log(`szw onstart()`);

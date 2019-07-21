@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, ViewProps, Text, StyleSheet, SafeAreaView } from "react-native";
 import { PlayerView } from "../components/PlayerView";
 import { MyDeck } from "../components/MyDeck";
 import { SelectHeroModal } from "./SelectHeroModal";
 import { drawCards, shuffleCards } from "../utils/CardUtils";
 import { ICard, OriginalCardDeck } from "../data/CardDeck";
+import Orientation from "react-native-orientation";
 
 interface IProps extends ViewProps {
 }
@@ -12,6 +13,10 @@ interface IProps extends ViewProps {
 export const GameScreen = (props: IProps) => {
   const [deck, setDeck] = useState(OriginalCardDeck);
   const [myHand, setMyHand] = useState<ICard[]>([]);
+
+  useEffect(() => {
+    Orientation.lockToLandscape();
+  }, []);
 
   function onSelectHero(info: string) {
     const cardDeck = shuffleCards();
