@@ -58,11 +58,18 @@ const styles = StyleSheet.create({
     width: PLAYER_WIDTH,
     height: PLAYER_HEIGHT
   },
+
   handAmount: {
     position: "absolute",
     right: 0,
     top: 0,
-    fontSize: 20
+    fontSize: 22,
+    textAlign: "center",
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    borderStyle: "solid",
+    backgroundColor: "#f76260"
   },
   emptyPlaceHolder: {
     flex: 1

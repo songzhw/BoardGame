@@ -3,7 +3,7 @@ import { View, ViewProps, Text, StyleSheet, SafeAreaView } from "react-native";
 import { PlayerView } from "../components/PlayerView";
 import { MyDeck } from "../components/MyDeck";
 import { SelectHeroModal } from "./SelectHeroModal";
-import { shuffleCards } from "../utils/CardUtils";
+import { drawCards, shuffleCards } from "../utils/CardUtils";
 import { OriginalCardDeck } from "../data/CardDeck";
 
 interface IProps extends ViewProps {
@@ -22,9 +22,9 @@ export const GameScreen = (props: IProps) => {
     <SafeAreaView style={styles.container}>
 
       <View style={styles.row}>
-        <PlayerView hand={[]} avatar={require("../../res/images/heros/孙权.jpg")}/>
-        <PlayerView hand={[]} avatar={require("../../res/images/heros/赵云.jpg")}/>
-        <PlayerView hand={[]} avatar={require("../../res/images/heros/张辽.jpg")}/>
+        <PlayerView hand={drawCards(OriginalCardDeck, 4)} avatar={require("../../res/images/heros/孙权.jpg")}/>
+        <PlayerView hand={drawCards(OriginalCardDeck, 4)} avatar={require("../../res/images/heros/赵云.jpg")}/>
+        <PlayerView hand={drawCards(OriginalCardDeck, 4)} avatar={require("../../res/images/heros/张辽.jpg")}/>
       </View>
 
       <MyDeck/>
