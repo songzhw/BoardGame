@@ -27,7 +27,7 @@ export const GameScreen = (props: IProps) => {
         <PlayerView hand={drawCards(OriginalCardDeck, 4)} avatar={require("../../res/images/heros/张辽.jpg")}/>
       </View>
 
-      <MyDeck/>
+      <MyDeck hand={drawCards(OriginalCardDeck, 4)} avatar={require("../../res/images/heros/魏延.jpg")}/>
 
       <SelectHeroModal onSelect={onSelectHero}/>
 

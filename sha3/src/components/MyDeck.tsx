@@ -1,16 +1,19 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, ViewProps } from "react-native";
 import { PLAYER_HEIGHT } from "../core/Const";
 import { PlayerView } from "./PlayerView";
+import { ICard } from "../data/CardDeck";
 
-interface IProps {
+interface IProps extends ViewProps {
+  avatar: any;
+  hand: ICard[]
 }
 
 export const MyDeck = (props: IProps) => {
 
   return (
     <View style={styles.parent}>
-      <PlayerView  hand={[]} avatar={require("../../res/images/heros/魏延.jpg")}/>
+      <PlayerView hand={props.hand} avatar={props.avatar}/>
     </View>
   );
 };

@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f76260"
   },
   handAmount: {
-    fontSize: 22,
+    fontSize: 19,
     textAlign: "center"
 
   },
