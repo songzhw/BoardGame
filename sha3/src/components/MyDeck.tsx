@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, View, ViewProps } from "react-native";
-import { CARD_WIDTH, PLAYER_HEIGHT } from "../core/Const";
+import { CARD_WIDTH, HAND_OFFSET_4, PLAYER_HEIGHT } from "../core/Const";
 import { PlayerView } from "./PlayerView";
 import { ICard } from "../data/CardDeck";
 import { imageSources } from "../core/Images";
@@ -21,7 +21,7 @@ export const MyDeck = (props: IProps) => {
         source={imageSources[card.label]}
         key={index + card.label}/>
     );
-    positionOffset += 40;
+    positionOffset += HAND_OFFSET_4;
   });
 
   return (
