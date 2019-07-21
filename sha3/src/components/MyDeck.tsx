@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, View, ViewProps } from "react-native";
-import { CARD_WIDTH, HAND_OFFSET_4, PLAYER_HEIGHT } from "../core/Const";
+import { CARD_HEIGHT, CARD_WIDTH, HAND_OFFSET_4, PLAYER_HEIGHT } from "../core/Const";
 import { PlayerView } from "./PlayerView";
 import { ICard } from "../data/CardDeck";
 import { imageSources } from "../core/Images";
@@ -42,6 +42,6 @@ const styles = StyleSheet.create({
   },
   oneCard: {
     width: CARD_WIDTH,
-    height: PLAYER_HEIGHT
+    height: CARD_HEIGHT
   }
 });

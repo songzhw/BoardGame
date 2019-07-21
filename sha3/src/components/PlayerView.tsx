@@ -1,10 +1,10 @@
 import React from "react";
-import { StyleSheet, View, Text, ViewProps, Image } from "react-native";
+import { StyleSheet, View, Text, ViewProps, Image, ImageRequireSource, ImageSourcePropType } from "react-native";
 import { PLAYER_HEIGHT, PLAYER_WIDTH } from "../core/Const";
 import { ICard } from "../data/CardDeck";
 
 interface IProps extends ViewProps {
-  avatar: any;
+  avatar: ImageSourcePropType;
   hand: ICard[]
 }
 
