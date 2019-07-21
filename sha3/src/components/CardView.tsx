@@ -12,10 +12,11 @@ export const CardView = (props: IProps) => {
   const { card } = props;
   const suit = imageSources[card.suit];
   const image = imageSources[card.label];
+  const textColor = (card.suit === "heart" || card.suit === "diamond") ? "#A40000" : "#000000";
   return (
     <View>
       <Image style={styles.card} source={image}/>
-      <Text style={[styles.rank]}> {card.rank} </Text>
+      <Text style={[styles.rank, { color: textColor }]}> {card.rank} </Text>
       <Image style={styles.suit} source={suit}/>
     </View>
   );
@@ -28,19 +29,18 @@ const styles = StyleSheet.create({
     height: CARD_HEIGHT
   },
   rank: {
-    width: 15,
-    height: 15,
+    width: 14,
+    height: 14,
     position: "absolute",
-    top: 5,
-    left: 6,
-    fontWeight: "bold",
-    color: "red"
+    top: 4,
+    left: 4,
+    fontWeight: "bold"
   },
   suit: {
     width: 21,
     height: 17,
     position: "absolute",
-    top: 20,
-    left: 3
+    top: 18,
+    left: 2
   }
 });
