@@ -1,5 +1,6 @@
 export const PLAYER_WIDTH = 114;
 export const PLAYER_HEIGHT = 126;
+export const CARD_WIDTH = 87; // 原dimension是200/290, 所以此值 = 200 / 290 * PLAYER_HEIGHT
 
 
 // = = = = = = = = = =

@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, View, ViewProps } from "react-native";
-import { PLAYER_HEIGHT } from "../core/Const";
+import { CARD_WIDTH, PLAYER_HEIGHT } from "../core/Const";
 import { PlayerView } from "./PlayerView";
 import { ICard } from "../data/CardDeck";
 import { JSXElement } from "@babel/types";
@@ -15,7 +15,7 @@ export const MyDeck = (props: IProps) => {
   const handViews: Element[] = [];
   props.hand.forEach((card, index) => {
     handViews.push(
-      <Image source={require("../../res/images/cards/basic/杀.png")} key={index + card.label}/>
+      <Image style={styles.oneCard} source={require("../../res/images/cards/basic/杀.png")} key={index + card.label}/>
     );
   });
 
@@ -32,5 +32,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     height: PLAYER_HEIGHT,
     backgroundColor: "powderblue"
+  },
+  oneCard: {
+    width: CARD_WIDTH,
+    height: PLAYER_HEIGHT
   }
 });
