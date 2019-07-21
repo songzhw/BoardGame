@@ -35,9 +35,9 @@ export const PlayerView = (props: IProps) => {
           <Text style={styles.bottomCell}>木牛流马</Text>
         </View>
         <View style={styles.bottomRow}>
-          <Image source={require("../../res/images/adjugement/乐不思蜀.png")} style={styles.bottomAdjugementCell}/>
-          <Image source={require("../../res/images/adjugement/兵粮寸断.png")} style={styles.bottomAdjugementCell}/>
-          <Image source={require("../../res/images/adjugement/闪电.png")} style={styles.bottomAdjugementCell}/>
+          <Image source={require("../../res/images/cards/adjugement/乐不思蜀.png")} style={styles.bottomAdjugementCell}/>
+          <Image source={require("../../res/images/cards/adjugement/兵粮寸断.png")} style={styles.bottomAdjugementCell}/>
+          <Image source={require("../../res/images/cards/adjugement/闪电.png")} style={styles.bottomAdjugementCell}/>
         </View>
       </View>
     </View>
