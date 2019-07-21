@@ -3,7 +3,6 @@ import { Image, StyleSheet, View, ViewProps } from "react-native";
 import { CARD_WIDTH, PLAYER_HEIGHT } from "../core/Const";
 import { PlayerView } from "./PlayerView";
 import { ICard } from "../data/CardDeck";
-import { JSXElement } from "@babel/types";
 
 interface IProps extends ViewProps {
   avatar: any;
@@ -12,17 +11,24 @@ interface IProps extends ViewProps {
 
 export const MyDeck = (props: IProps) => {
   console.log(`szw mydeck = `, props.hand);
+  let positionOffset = 0;
   const handViews: Element[] = [];
   props.hand.forEach((card, index) => {
     handViews.push(
-      <Image style={styles.oneCard} source={require("../../res/images/cards/basic/杀.png")} key={index + card.label}/>
+      <Image
+        style={[styles.oneCard, { position: "absolute", left: positionOffset }]}
+        source={require("../../res/images/cards/basic/杀.png")}
+        key={index + card.label}/>
     );
+    positionOffset += 40;
   });
 
   return (
     <View style={styles.parent}>
       <PlayerView hand={props.hand} avatar={props.avatar}/>
-      {handViews}
+      <View style={{ flexDirection: "row" }}>
+        {handViews}
+      </View>
     </View>
   );
 };
