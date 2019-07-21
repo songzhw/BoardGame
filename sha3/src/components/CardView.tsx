@@ -13,8 +13,8 @@ export const CardView = (props: IProps) => {
   const image = imageSources[props.card.label];
   return (
     <View>
-      <Image style={styles.suit} source={suit}/>
       <Image style={styles.card} source={image}/>
+      <Image style={styles.suit} source={suit}/>
     </View>
   );
 };
@@ -26,10 +26,10 @@ const styles = StyleSheet.create({
     height: CARD_HEIGHT
   },
   suit: {
-    width: 40,
-    height: 40,
+    width: 21,
+    height: 17,
     position: "absolute",
-    top: 20,
-    left: 20
+    top: 7,
+    left: 3
   }
 });
