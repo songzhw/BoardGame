@@ -11,10 +11,12 @@ interface IProps extends ViewProps {
 
 export const GameScreen = (props: IProps) => {
   const [deck, setDeck] = useState(OriginalCardDeck);
+  const [myHand, setMyHand] = useState(drawCards(OriginalCardDeck, 4));
 
   function onSelectHero(info: string) {
     const cardDeck = shuffleCards();
     setDeck(cardDeck);
+    setMyHand(drawCards(cardDeck, 4));
     console.log(`szw info = ${info} ; `, cardDeck);
   }
 
@@ -27,7 +29,7 @@ export const GameScreen = (props: IProps) => {
         <PlayerView hand={drawCards(deck, 4)} avatar={require("../../res/images/heros/张辽.jpg")}/>
       </View>
 
-      <MyDeck hand={drawCards(deck, 4)} avatar={require("../../res/images/heros/魏延.jpg")}/>
+      <MyDeck hand={myHand} avatar={require("../../res/images/heros/魏延.jpg")}/>
 
       <SelectHeroModal onSelect={onSelectHero}/>
 
