@@ -4,14 +4,14 @@ import { PlayerView } from "../components/PlayerView";
 import { MyDeck } from "../components/MyDeck";
 import { SelectHeroModal } from "./SelectHeroModal";
 import { drawCards, shuffleCards } from "../utils/CardUtils";
-import { OriginalCardDeck } from "../data/CardDeck";
+import { ICard, OriginalCardDeck } from "../data/CardDeck";
 
 interface IProps extends ViewProps {
 }
 
 export const GameScreen = (props: IProps) => {
   const [deck, setDeck] = useState(OriginalCardDeck);
-  const [myHand, setMyHand] = useState(drawCards(OriginalCardDeck, 4));
+  const [myHand, setMyHand] = useState<ICard[]>([]);
 
   function onSelectHero(info: string) {
     const cardDeck = shuffleCards();
