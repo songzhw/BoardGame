@@ -10,7 +10,7 @@ export const MyDeck = (props: IProps) => {
 
   return (
     <View style={styles.parent}>
-      <PlayerView/>
+      <PlayerView  hand={[]} avatar={require("../../res/images/heros/魏延.jpg")}/>
     </View>
   );
 };

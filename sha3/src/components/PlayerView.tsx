@@ -13,7 +13,10 @@ export const PlayerView = (props: IProps) => {
 
   return (
     <View style={[styles.container, passedInStyles]}>
+
       <Image style={styles.avatar} source={props.avatar}/>
+
+      <Text style={styles.handAmount}> {props.hand.length} </Text>
 
       <View style={styles.emptyPlaceHolder}/>
       <View style={styles.bottomContainer}>
@@ -54,6 +57,12 @@ const styles = StyleSheet.create({
     top: 0,
     width: PLAYER_WIDTH,
     height: PLAYER_HEIGHT
+  },
+  handAmount: {
+    position: "absolute",
+    right: 0,
+    top: 0,
+    fontSize: 20
   },
   emptyPlaceHolder: {
     flex: 1
