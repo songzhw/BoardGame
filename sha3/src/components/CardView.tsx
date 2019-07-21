@@ -9,11 +9,13 @@ interface IProps extends ViewProps {
 }
 
 export const CardView = (props: IProps) => {
-  const suit = imageSources[props.card.suit];
-  const image = imageSources[props.card.label];
+  const { card } = props;
+  const suit = imageSources[card.suit];
+  const image = imageSources[card.label];
   return (
     <View>
       <Image style={styles.card} source={image}/>
+      <Text style={[styles.rank]}> {card.rank} </Text>
       <Image style={styles.suit} source={suit}/>
     </View>
   );
@@ -25,11 +27,20 @@ const styles = StyleSheet.create({
     width: CARD_WIDTH,
     height: CARD_HEIGHT
   },
+  rank: {
+    width: 15,
+    height: 15,
+    position: "absolute",
+    top: 5,
+    left: 6,
+    fontWeight: "bold",
+    color: "red"
+  },
   suit: {
     width: 21,
     height: 17,
     position: "absolute",
-    top: 7,
+    top: 20,
     left: 3
   }
 });
