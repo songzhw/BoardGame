@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, View, ViewProps } from "react-native";
-import { CARD_HEIGHT, CARD_WIDTH, HAND_OFFSET_4, PLAYER_HEIGHT } from "../core/Const";
+import { CARD_HEIGHT, CARD_WIDTH, HAND_OFFSET_4, MY_PLAYER_HEIGHT } from "../core/Const";
 import { MyPlayerView } from "./MyPlayerView";
 import { ICard } from "../data/CardDeck";
 import { imageSources } from "../core/Images";
@@ -38,7 +38,7 @@ export const MyDeck = (props: IProps) => {
 const styles = StyleSheet.create({
   parent: {
     flexDirection: "row",
-    height: PLAYER_HEIGHT,
+    height: MY_PLAYER_HEIGHT,
     backgroundColor: "powderblue"
   },
   oneCard: {

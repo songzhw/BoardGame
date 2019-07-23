@@ -6,6 +6,7 @@ import { SelectHeroModal } from "./SelectHeroModal";
 import { drawCards, shuffleCards } from "../utils/CardUtils";
 import { ICard, OriginalCardDeck } from "../data/CardDeck";
 import Orientation from "react-native-orientation";
+import { PlayerView } from "../components/PlayerView";
 
 interface IProps extends ViewProps {
 }
@@ -29,9 +30,9 @@ export const GameScreen = (props: IProps) => {
     <SafeAreaView style={styles.container}>
 
       <View style={styles.row}>
-        <MyPlayerView hand={drawCards(deck, 4)} avatar={require("../../res/images/heroes/孙权.jpg")}/>
-        <MyPlayerView hand={drawCards(deck, 4)} avatar={require("../../res/images/heroes/赵云.jpg")}/>
-        <MyPlayerView hand={drawCards(deck, 4)} avatar={require("../../res/images/heroes/张辽.jpg")}/>
+        <PlayerView hand={drawCards(deck, 4)} avatar={require("../../res/images/heroes/孙权.jpg")}/>
+        <PlayerView hand={drawCards(deck, 4)} avatar={require("../../res/images/heroes/赵云.jpg")}/>
+        <PlayerView hand={drawCards(deck, 4)} avatar={require("../../res/images/heroes/张辽.jpg")}/>
       </View>
 
       <MyDeck hand={myHand} avatar={require("../../res/images/heroes/魏延.jpg")}/>

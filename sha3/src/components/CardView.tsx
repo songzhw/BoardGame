@@ -1,6 +1,6 @@
 import React from "react";
 import { View, ViewProps, Text, StyleSheet, ImageSourcePropType, Image } from "react-native";
-import { CARD_HEIGHT, CARD_WIDTH, PLAYER_HEIGHT } from "../core/Const";
+import { CARD_HEIGHT, CARD_WIDTH, MY_PLAYER_HEIGHT } from "../core/Const";
 import { ICard } from "../data/CardDeck";
 import { imageSources } from "../core/Images";
 

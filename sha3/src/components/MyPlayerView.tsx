@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, ViewProps, Image, ImageRequireSource, ImageSourcePropType } from "react-native";
-import { PLAYER_HEIGHT, PLAYER_WIDTH } from "../core/Const";
+import { MY_PLAYER_HEIGHT, MY_PLAYER_WIDTH } from "../core/Const";
 import { ICard } from "../data/CardDeck";
 
 interface IProps extends ViewProps {
@@ -47,8 +47,8 @@ export const MyPlayerView = (props: IProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: PLAYER_WIDTH,
-    height: PLAYER_HEIGHT,
+    width: MY_PLAYER_WIDTH,
+    height: MY_PLAYER_HEIGHT,
     borderWidth: 2,
     borderColor: "black"
   },
@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     top: 0,
-    width: PLAYER_WIDTH,
-    height: PLAYER_HEIGHT
+    width: MY_PLAYER_WIDTH,
+    height: MY_PLAYER_HEIGHT
   },
   circle: {
     width: 24,
@@ -97,8 +97,8 @@ const styles = StyleSheet.create({
     fontSize: 15
   },
   bottomAdjugementCell: {
-    width: PLAYER_WIDTH / 4,
-    height: PLAYER_WIDTH / 4
+    width: MY_PLAYER_WIDTH / 4,
+    height: MY_PLAYER_WIDTH / 4
   }
 
 });
