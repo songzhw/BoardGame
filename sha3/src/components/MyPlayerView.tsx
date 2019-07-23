@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     color: "black",
     fontSize: 15
   },
-  bottomAdjugementCell: {
+  adjugementCell: {
     width: MY_PLAYER_WIDTH / 4,
     height: MY_PLAYER_WIDTH / 4
   }
