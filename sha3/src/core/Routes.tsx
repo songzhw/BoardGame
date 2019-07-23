@@ -9,17 +9,7 @@ const RouteList = createStackNavigator({
   // HomeScreen, //TODO get it back on production
   GameScreen
 }, {
-  defaultNavigationOptions: {
-    headerTitle: (
-      <NavigationBar
-        title="Sha3"
-        titleStyle={{ color: "white" }}
-        backLabelText=""
-        backLabelIcon={(<View/>)}
-        style={{ backgroundColor: "#1b5e20" }}
-      />
-    )
-  }
+  headerMode: "none"
 });
 
 export const Routes = createAppContainer(RouteList);
