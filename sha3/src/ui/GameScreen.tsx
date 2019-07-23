@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, ViewProps, Text, StyleSheet, SafeAreaView } from "react-native";
-import { PlayerView } from "../components/PlayerView";
+import { MyPlayerView } from "../components/MyPlayerView";
 import { MyDeck } from "../components/MyDeck";
 import { SelectHeroModal } from "./SelectHeroModal";
 import { drawCards, shuffleCards } from "../utils/CardUtils";
@@ -29,9 +29,9 @@ export const GameScreen = (props: IProps) => {
     <SafeAreaView style={styles.container}>
 
       <View style={styles.row}>
-        <PlayerView hand={drawCards(deck, 4)} avatar={require("../../res/images/heroes/孙权.jpg")}/>
-        <PlayerView hand={drawCards(deck, 4)} avatar={require("../../res/images/heroes/赵云.jpg")}/>
-        <PlayerView hand={drawCards(deck, 4)} avatar={require("../../res/images/heroes/张辽.jpg")}/>
+        <MyPlayerView hand={drawCards(deck, 4)} avatar={require("../../res/images/heroes/孙权.jpg")}/>
+        <MyPlayerView hand={drawCards(deck, 4)} avatar={require("../../res/images/heroes/赵云.jpg")}/>
+        <MyPlayerView hand={drawCards(deck, 4)} avatar={require("../../res/images/heroes/张辽.jpg")}/>
       </View>
 
       <MyDeck hand={myHand} avatar={require("../../res/images/heroes/魏延.jpg")}/>

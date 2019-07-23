@@ -8,7 +8,7 @@ interface IProps extends ViewProps {
   hand: ICard[]
 }
 
-export const PlayerView = (props: IProps) => {
+export const MyPlayerView = (props: IProps) => {
   const passedInStyles = props.style;
 
   return (

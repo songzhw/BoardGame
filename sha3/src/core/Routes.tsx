@@ -6,7 +6,7 @@ import { GameScreen } from "../ui/GameScreen";
 import { HomeScreen } from "../ui/HomeScreen";
 
 const RouteList = createStackNavigator({
-  HomeScreen, //TODO get it back on production
+  // HomeScreen, //TODO get it back on production
   GameScreen
 }, {
   headerMode: "none"
