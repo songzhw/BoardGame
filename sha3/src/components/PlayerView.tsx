@@ -15,21 +15,19 @@ export const PlayerView = (props: IProps) => {
     cards += ", ";
   }
   return (
-    <ImageBackground source={props.avatar}>
-      <View style={styles.container}>
-        <View style={styles.top}>
-          <Text style={styles.equipmentCell}>{cards}</Text>
-        </View>
-
-        <View style={styles.bottom}>
-          <Text style={styles.equipmentCell}>青龙</Text>
-          <Text style={styles.equipmentCell}>八卦</Text>
-          <Text style={styles.horseCell}>+2</Text>
-          <Text style={styles.horseCell}>-2</Text>
-        </View>
+    <View style={styles.container}>
+      <Image source={props.avatar} style={styles.container} resizeMode={"cover"}/>
+      <View style={styles.top}>
+        <Text style={styles.equipmentCell}>{cards}</Text>
       </View>
-      <Text>张辽</Text>
-    </ImageBackground>
+
+      <View style={styles.bottom}>
+        <Text style={styles.equipmentCell}>青龙</Text>
+        <Text style={styles.equipmentCell}>八卦</Text>
+        <Text style={styles.horseCell}>+2</Text>
+        <Text style={styles.horseCell}>-2</Text>
+      </View>
+    </View>
   );
 };
 
@@ -39,7 +37,6 @@ const styles = StyleSheet.create({
   container: {
     width: width,
     height: height,
-    backgroundColor: "grey"
   },
   top: {
     flex: 1,
