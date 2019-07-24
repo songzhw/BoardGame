@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   },
   handleAmountParent: {
     position: "absolute",
-    right: 0,
+    left: 0,
     top: 0,
     backgroundColor: "#f76260"
   },
