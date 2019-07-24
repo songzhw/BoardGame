@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { GestureResponderEvent, Image, StyleSheet, TouchableOpacity, View, ViewProps } from "react-native";
+import { GestureResponderEvent, Image, StyleSheet, TouchableOpacity, View, ViewProps, YellowBox } from "react-native";
 import { CARD_HEIGHT, CARD_WIDTH, HAND_OFFSET_4, MY_PLAYER_HEIGHT } from "../core/Const";
 import { MyPlayerView } from "./MyPlayerView";
 import { ICard } from "../data/CardDeck";
 import { imageSources } from "../core/Images";
 import { CardView } from "./CardView";
+
+YellowBox.ignoreWarnings(["Remote debugger"]);
 
 interface IProps extends ViewProps {
   avatar: any;
@@ -19,7 +21,7 @@ export const MyDeck = (props: IProps) => {
   props.hand.forEach((card, index) => {
     handViews.push(
       <TouchableOpacity
-        onPress={()=> console.log(`szw selected ${index}`)}
+        onPress={() => selectCard(card, index)}
         key={index + card.label}
         style={[styles.oneCard, { position: "absolute", left: positionOffset }]}>
         <CardView
@@ -31,9 +33,8 @@ export const MyDeck = (props: IProps) => {
     positionOffset += HAND_OFFSET_4;
   });
 
-  const selectCard = (event: GestureResponderEvent) => {
-    console.log(`szw select: `);
-    // console.log(`szw select = `, event.currentTarget.index);
+  const selectCard = (card: ICard, index: number) => {
+    console.log(`szw select: ${index} || `, card);
   };
 
   return (
