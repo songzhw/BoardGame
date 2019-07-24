@@ -18,9 +18,12 @@ export const MyDeck = (props: IProps) => {
   const handViews: Element[] = [];
   props.hand.forEach((card, index) => {
     handViews.push(
-      <TouchableOpacity data-index={index} onPress={selectCard} key={index + card.label}>
+      <TouchableOpacity
+        onPress={()=> console.log(`szw selected ${index}`)}
+        key={index + card.label}
+        style={[styles.oneCard, { position: "absolute", left: positionOffset }]}>
         <CardView
-          style={[styles.oneCard, { position: "absolute", left: positionOffset }]}
+          style={{ flex: 1 }}
           card={card}
         />
       </TouchableOpacity>
