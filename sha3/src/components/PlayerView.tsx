@@ -16,7 +16,7 @@ export const PlayerView = (props: IProps) => {
   }
   return (
     <View style={styles.container}>
-      <Image source={props.avatar} style={styles.container} resizeMode={"cover"}/>
+      <Image source={props.avatar} style={[styles.container, {position: 'absolute'}]} resizeMode={"cover"}/>
 
       <View style={styles.top}>
         <Text style={styles.equipmentCell}>{cards}</Text>
