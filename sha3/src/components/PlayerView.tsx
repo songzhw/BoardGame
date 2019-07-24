@@ -9,11 +9,7 @@ interface IProps extends ViewProps {
 }
 
 export const PlayerView = (props: IProps) => {
-  let cards = "";
-  for (let card of props.hand) {
-    cards += card.label;
-    cards += ", ";
-  }
+
   return (
     <View style={styles.container}>
       <Image source={props.avatar} style={[styles.container, { position: "absolute" }]} resizeMode={"cover"}/>
