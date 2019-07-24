@@ -17,6 +17,7 @@ export const PlayerView = (props: IProps) => {
   return (
     <View style={styles.container}>
       <Image source={props.avatar} style={styles.container} resizeMode={"cover"}/>
+
       <View style={styles.top}>
         <Text style={styles.equipmentCell}>{cards}</Text>
       </View>
@@ -31,8 +32,8 @@ export const PlayerView = (props: IProps) => {
   );
 };
 
-const width = 120;
-const height = 40;
+const width = 170;
+const height = 80;
 const styles = StyleSheet.create({
   container: {
     width: width,
