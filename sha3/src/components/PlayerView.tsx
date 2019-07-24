@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ViewProps, Text, StyleSheet, ImageSourcePropType, Image } from "react-native";
+import { View, ViewProps, Text, StyleSheet, ImageSourcePropType, Image, ImageBackground } from "react-native";
 import { ICard } from "../data/CardDeck";
 import { MY_PLAYER_WIDTH } from "../core/Const";
 
@@ -15,7 +15,7 @@ export const PlayerView = (props: IProps) => {
     cards += ", ";
   }
   return (
-    <Image source={props.avatar}>
+    <ImageBackground source={props.avatar}>
       <View style={styles.container}>
         <View style={styles.top}>
           <Text style={styles.equipmentCell}>{cards}</Text>
@@ -29,7 +29,7 @@ export const PlayerView = (props: IProps) => {
         </View>
       </View>
       <Text>张辽</Text>
-    </Image>
+    </ImageBackground>
   );
 };
 
