@@ -9,31 +9,36 @@ interface IProps extends ViewProps {
 }
 
 export const PlayerView = (props: IProps) => {
-
+  let cards = "";
+  for (let card of props.hand) {
+    cards += card.label;
+    cards += ", ";
+  }
   return (
-    <View style={styles.container}>
-      <View style={styles.top}>
-        <Text style={styles.equipmentCell}>木牛</Text>
-        <Image source={require("../../res/images/cards/adjugement/乐不思蜀.png")} style={styles.adjugementCell}/>
-        <Image source={require("../../res/images/cards/adjugement/兵粮寸断.png")} style={styles.adjugementCell}/>
-        <Image source={require("../../res/images/cards/adjugement/闪电.png")} style={styles.adjugementCell}/>
-      </View>
+    <Image source={props.avatar}>
+      <View style={styles.container}>
+        <View style={styles.top}>
+          <Text style={styles.equipmentCell}>{cards}</Text>
+        </View>
 
-      <View style={styles.bottom}>
-        <Text style={styles.equipmentCell}>青龙</Text>
-        <Text style={styles.equipmentCell}>八卦</Text>
-        <Text style={styles.horseCell}>+2</Text>
-        <Text style={styles.horseCell}>-2</Text>
+        <View style={styles.bottom}>
+          <Text style={styles.equipmentCell}>青龙</Text>
+          <Text style={styles.equipmentCell}>八卦</Text>
+          <Text style={styles.horseCell}>+2</Text>
+          <Text style={styles.horseCell}>-2</Text>
+        </View>
       </View>
-    </View>
+      <Text>张辽</Text>
+    </Image>
   );
 };
 
-
+const width = 120;
+const height = 40;
 const styles = StyleSheet.create({
   container: {
-    width: 120,
-    height: 40,
+    width: width,
+    height: height,
     backgroundColor: "grey"
   },
   top: {
@@ -41,11 +46,11 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   equipmentCell: {
-    flex: 1.5,
+    width: 35,
     textAlign: "center"
   },
   horseCell: {
-    flex: 1,
+    width: 25,
     textAlign: "center"
   },
   bottom: {
